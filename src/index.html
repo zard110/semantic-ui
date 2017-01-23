@@ -19,12 +19,52 @@
     <!-- endinject -->
     <!-- endbuild -->
   </head>
-  <body>
+  <body class="flex-column no-wrap">
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div ui-view></div>
+    <header>
+      <div class="ui inverted main menu">
+        <div class="ui container">
+          <a class="launch icon item">
+            <i class="content icon"></i>
+          </a>
+
+          <div class="item">
+            Container
+          </div>
+
+          <div class="right menu">
+
+            <div class="vertically fitted borderless item">
+              <iframe class="github" src="http://ghbtns.com/github-btn.html?user=semantic-org&amp;repo=semantic-ui&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+            </div>
+
+            <!--
+            <div class="item">
+              <div class="ui hidden right aligned search input" id="search">
+                <div class="ui transparent icon input">
+                  <input class="prompt" type="text" placeholder="Search...">
+                  <i class="inverted search link icon" data-content="Search UI"></i>
+                </div>
+                <div class="results"></div>
+              </div>
+            </div>
+            -->
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="flex-item flex-column no-wrap" style="overflow: auto;">
+
+      <div class="ui fluid container flex-item no-shrink" ui-view style="overflow-x: hidden; padding: 1em;"></div>
+
+      <footer>
+        Copyrigtht @ 2016 壹城集团版权所有
+      </footer>
+    </div>
 
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->
