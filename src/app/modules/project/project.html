@@ -1,9 +1,13 @@
 <div class="row flex-column flex-item">
-  <div class="col-md-12 proj-mag">
-    <img src="assets/images/proj/icon_xm.jpg" style="position: absolute;top: 20px;left: 50px;"/>
-    <span style="position: absolute;top: 20px;left: 100px;color:#448bff">项目名称</span>
-    <div style="position: absolute;top: 40px;left: 100px;">四方新村路改造<div class="my-icons icon-db">督办</div></div>
-    <ul>
+  <div class="col-md-12 proj-mag flex-column">
+    <div class="flex-row flex-center">
+      <img src="assets/images/proj/icon_xm.jpg" style="height: 40px;"/>
+      <div class="flex-item" style="margin-left: 20px;">
+        <span style="color:#448bff; font-size: 20px;">项目名称</span>
+        <div style="">四方新村路改造<div class="my-icons icon-db">督办</div></div>
+      </div>
+    </div>
+    <ul class="flex-row flex-between">
       <li>
         <span>项目类型</span></br>
         <span style="font-size: 16px">道路改造</span>
@@ -189,8 +193,10 @@
               </ul>
             </uib-tab>
             <uib-tab index="2" heading="工作交流">
-              <textarea rows="5" class="gzjl" placeholder="输入文本..." ></textarea>
-              <a class="my-butt" style="position: absolute;top:100px;right:10px;">发&nbsp;布</a>
+              <div class="flex-row flex-right">
+                <textarea rows="5" class="gzjl" placeholder="输入文本..." ></textarea>
+                <a class="my-butt" style="margin: 20px;">发&nbsp;布</a>
+              </div>
               <ul class="wddb" style="border-top:1px solid #ccc; ">
                 <li>
                   <div>
@@ -207,7 +213,7 @@
             </uib-tab>
           </uib-tabset>
         </div>
-        <div style="width: 300px; margin-left: 10px;" class="no-shrink">
+        <div style="width: 300px; margin-left: 30px;" class="no-shrink">
           <div class="attention">
             <div class="container-fluid">
               <div class="row peo">
