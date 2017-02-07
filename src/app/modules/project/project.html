@@ -4,29 +4,29 @@
       <img src="assets/images/proj/icon_xm.jpg" style="height: 40px;"/>
       <div class="flex-item" style="margin-left: 20px;">
         <span style="color:#448bff; font-size: 20px;">项目名称</span>
-        <div style="">四方新村路改造<div class="my-icons icon-db">督办</div></div>
+        <div style="">{{vm.project.name}}<div class="my-icons icon-db">督办</div></div>
       </div>
     </div>
     <ul class="flex-row flex-between">
       <li>
         <span>项目类型</span></br>
-        <span style="font-size: 16px">道路改造</span>
+        <span style="font-size: 16px">{{vm.project.type}}</span>
       </li>
       <li>
         <span>项目主负责人</span></br>
-        <span style="font-size: 16px">张三丰</span>
+        <span style="font-size: 16px">{{vm.project.owner}}</span>
       </li>
       <li>
         <span>项目启动日期</span></br>
-        <span style="font-size: 16px">2015-12-26</span>
+        <span style="font-size: 16px">{{vm.project.date}}</span>
       </li>
       <li>
         <span>项目当前阶段</span></br>
-        <span style="font-size: 16px">环评报告</span>
+        <span style="font-size: 16px">{{vm.project.stage}}</span>
       </li>
       <li>
         <span>项目状态</span></br>
-        <span style="font-size: 16px">正常</span>
+        <span style="font-size: 16px">{{vm.project.state}}</span>
       </li>
     </ul>
   </div>
@@ -49,239 +49,22 @@
       </div>
       <div class="all-proj">
         <ul class="proj-list">
-          <li>
+          <li ng-repeat="task in vm.tasks"
+              ui-sref-active="active"
+              ui-sref="root.project.task({projectId: vm.projectId, taskId: task.id})">
             <div class="proj-main">
-              <span style="font-size: 16px;">调查相邻土地权属</span>
-              <div class="my-icons icon-db">督办</div>
-              <div class="my-icons icon-yc">延迟</div>
+              <span style="font-size: 16px;">{{task.name}}</span>
+              <div class="my-icons icon-db" ng-if="0 == task.state">督办</div>
+              <div class="my-icons icon-yc" ng-if="1 == task.state">延迟</div>
+              <div class="my-icons icon-wc" ng-if="2 == task.state">完成</div>
               </br>
-              <span style="font-size: 13px;margin-top: 13px;">开始时间 2016.12.28</span>
-            </div>
-          </li>
-          <li>
-            <div class="proj-main">
-              <span style="font-size: 16px;">调整方案</span>
-              <div class="my-icons icon-wc">完成</div>
-              </br>
-              <span style="font-size: 13px;margin-top: 13px;">开始时间 2016.12.28</span>
-            </div>
-          </li>
-          <li>
-            <div class="proj-main">
-              <span style="font-size: 16px;">与相关部门沟通</span>
-              </br>
-              <span style="font-size: 13px;margin-top: 13px;">开始时间 2016.12.28</span>
-            </div>
-          </li>
-          <li>
-            <div class="proj-main">
-              <span style="font-size: 16px;">编制项目建议书</span>
-              </br>
-              <span style="font-size: 13px;margin-top: 13px;">开始时间 2016.12.28</span>
-            </div>
-          </li>
-          <li>
-            <div class="proj-main">
-              <span style="font-size: 16px;">项目建议书批复</span>
-              <div class="my-icons icon-wc">完成</div>
-              </br>
-              <span style="font-size: 13px;margin-top: 13px;">开始时间 2016.12.28</span>
-            </div>
-          </li>
-          <li>
-            <div class="proj-main">
-              <span style="font-size: 16px;">委托管线资料</span>
-              </br>
-              <span style="font-size: 13px;margin-top: 13px;">开始时间 2016.12.28</span>
+              <span style="font-size: 13px;margin-top: 13px;">开始时间 {{task.date}}</span>
             </div>
           </li>
         </ul>
       </div>
     </div>
-    <div class="rightside flex-item flex-column">
-      <div class="col-md-12" style="height: 80px;line-height: 80px;">
-        <span style="font-size: 16px;">调查相邻土地权属</span>
-        <div class="my-icons icon-db">督办</div>
-        <div class="my-icons icon-yc">延迟</div>
-        <a class="my-butt2" href="#" style="position:absolute;right: 20px;top: 20px;">开始任务</a>
-      </div>
-      <div class="col-md-12" >
-        <div style="border: 1px solid #ccc;border-radius: 4px;height: 100px">
-          <table class="pinfo">
-            <tr style="height: 35px;">
-              <td style="width: 13%" class="lefttd">任务类型：</td><td style="width: 20%">调查</td>
-              <td style="width: 13%" class="lefttd">任务级别：</td><td style="width: 20%">一般</td>
-              <td style="width: 13%" class="lefttd">状态：</td><td><div class="my-icons icon-yc">延迟</div></td>
-            </tr>
-            <tr style="height: 35px;">
-              <td class="lefttd">开始时间：</td><td>2016/12/28</td>
-              <td class="lefttd">到期时间：</td><td>2017/01/12</td>
-              <td class="lefttd">结果：</td><td>进行中</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-      <div class="col-md-12 flex-item flex-row no-wrap no-shrink" style="margin-top: 20px;">
-        <div class="flex-item" style="margin-top: 30px;">
-          <uib-tabset>
-            <uib-tab index="0" heading="附件">
-              <div>
-                <div style="padding: 30px 0 0 50px;height: 80px;position: relative">
-                  <span>附件上传</span>
-                  <input type="text" class="file-upload" placeholder="选择本地文件..."/>
-                  <input type="file" class="file-upload file-upload-butt"/>
-                  <a class="my-butt upload-butt">上&nbsp;传</a>
-                </div>
-                <hr>
-                <div>
-                  <ul class="all-file">
-                    <li>
-                      <div class="img-cell"><img src="assets/images/proj/icon_pdf.png"></div>
-                      <div class="file-name">文件名文件名文件名文件名文.pdf</div>
-                    </li>
-                    <li>
-                      <div class="img-cell"><img src="assets/images/proj/icon_excel.png"></div>
-                      <div class="file-name">文件名.xls</div>
-                    </li>
-                    <li>
-                      <div class="img-cell"><img src="assets/images/proj/icon_ppt.png"></div>
-                      <div class="file-name">文件名.ppt</div>
-                    </li>
-                    <li>
-                      <div class="img-cell"><img src="assets/images/proj/icon_img.png"></div>
-                      <div class="file-name">文件名.png</div>
-                    </li>
-                    <li>
-                      <div class="img-cell"><img src="assets/images/proj/icon_word.png"></div>
-                      <div class="file-name">文件名.doc</div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </uib-tab>
-            <uib-tab index="1" heading="工作记录">
-              <a class="new-gzjl" onclick="addGzjl()"></a>
-              <ul class="wddb">
-                <li>
-                  <div>
-                    <span style="color: #488bfe;">张无忌</span>
-                    <span style="margin-left: 10px;">有新的动态-2017/01/12 5:19 下午</span>
-                    <img src="assets/images/icon_hf.png"/></br>
-                    <p>和我相关的动态和我相关的动态工作记录工作记录，工作记录和我相关的工作记录工作记录，
-                      工作记录和我相关的工作记录工作记录，和我相关的工作记录工作记录
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    <span style="color: #488bfe;">张无忌</span>
-                    <span style="margin-left: 10px;">有新的动态-2017/01/12 5:19 下午</span>
-                    <img src="assets/images/icon_hf.png"/></br>
-                    <p>和我相关的动态，和我相关的动态和我相关的动态
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    <span style="color: #488bfe;">张无忌</span>
-                    <span style="margin-left: 10px;">有新的动态-2017/01/12 5:19 下午</span>
-                    <img src="assets/images/icon_hf.png"/></br>
-                    <p>和我相关的动态，和我相关的动态和我相关的动态
-                    </p>
-                  </div>
-                </li>
-              </ul>
-            </uib-tab>
-            <uib-tab index="2" heading="工作交流">
-              <div class="flex-row flex-right">
-                <textarea rows="5" class="gzjl" placeholder="输入文本..." ></textarea>
-                <a class="my-butt" style="margin: 20px;">发&nbsp;布</a>
-              </div>
-              <ul class="wddb" style="border-top:1px solid #ccc; ">
-                <li>
-                  <div>
-                    <span style="color: #488bfe;">张无忌</span>
-                    <span style="margin-left: 10px;">有新的动态-2017/01/12 5:19 下午</span>
-                    <img src="assets/images/icon_hf.png"/></br>
-                    <p>工作交流备注的工作交流备注的工作交流备注的备注的工作交流工作交流备注的交流
-                      备注的工作交流交流备注的工作交流工作交流备注的工作交流
-                      备注的工作交流备注的工作交流备注的工作交流备注的工作交流备注的工作交流
-                    </p>
-                  </div>
-                </li>
-              </ul>
-            </uib-tab>
-          </uib-tabset>
-        </div>
-        <div style="width: 300px; margin-left: 30px;" class="no-shrink">
-          <div class="attention">
-            <div class="container-fluid">
-              <div class="row peo">
-                <div class="col-xs-12">
-                  <img src="assets/images/proj/icon_xrw.png">
-                  <span>关注人（12）</span>
-                </div>
-              </div>
-              <div class="row peo">
-                <div class="col-xs-6">
-                  <img src="assets/images/proj/icon_ry.png">
-                  <span>张无忌</span>
-                </div>
-                <div class="col-xs-6">
-                  <img src="assets/images/proj/icon_ry.png">
-                  <span>张无忌</span>
-                </div>
-              </div>
-              <div class="row peo">
-                <div class="col-xs-6">
-                  <img src="assets/images/proj/icon_ry.png">
-                  <span>张无忌</span>
-                </div>
-                <div class="col-xs-6">
-                  <img src="assets/images/proj/icon_ry.png">
-                  <span>张无忌</span>
-                </div>
-              </div>
-              <div class="row" style="margin-top: 15px;">
-                <div class="col-xs-12">
-                  <a href="#" style="text-decoration: none;">查看全部</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="task-trace">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-xs-12 time">
-                  <img src="assets/images/proj/icon_rwzz.png">
-                  <span>任务追踪</span>
-                </div>
-                <div class="col-xs-12 time">
-                  <span>预估时间</span></br>
-                  <div class="progress ygsj">
-                    <div class="progress-bar ygsj-bar" role="progressbar"style="width: 100%">
-                    </div>
-                  </div>6天
-                </div>
-                <div class="col-xs-12 time">
-                  <span>剩余期限</span></br>
-                  <div class="progress syqx">
-                    <div class="progress-bar syqx-bar"style="width: 50%">
-                    </div>
-                  </div>3天
-                </div>
-                <div class="col-xs-12 time">
-                  <span>任务完成度</span></br>
-                  <div class="progress rwwcd">
-                    <div class="progress-bar rwwcd-bar"style="width: 70%">
-                    </div>
-                  </div>70%
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="rightside flex-item flex-column" ui-view="task">
     </div>
   </div>
 </div>

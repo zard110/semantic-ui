@@ -24,6 +24,7 @@
       }
     });
 
+    // 登录
     $stateProvider
       .state('root.login', {
         url: '/login',
@@ -38,6 +39,7 @@
         }
       });
 
+    // 首页
     $stateProvider
       .state('root.dashboard', {
         url: '/dashboard',
@@ -68,6 +70,7 @@
         }
       });
 
+    // 项目
     $stateProvider
       .state('root.project', {
         url: '/project/:projectId',
@@ -82,7 +85,7 @@
 
     $stateProvider
       .state('root.project.manage', {
-        url: '/project/:projectId/manage',
+        url: '/manage',
         views: {
           'main@': {
             templateUrl: 'app/modules/project/project.manage.html',
@@ -92,13 +95,14 @@
         }
       });
 
+    // 任务
     $stateProvider
       .state('root.project.task', {
-        url: '/project/:projectId/task/:taskId',
+        url: '/task/:taskId',
         views: {
-          'main@': {
-            templateUrl: 'app/modules/project/project.manage.html',
-            controller: 'ProjectManageController',
+          'task': {
+            templateUrl: 'app/modules/task/task.html',
+            controller: 'TaskController',
             controllerAs: 'vm'
           }
         }

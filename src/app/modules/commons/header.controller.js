@@ -7,7 +7,7 @@
 
   /** @ngInject */
   function HeaderController($state, $uibModal) {
-    let vm = this;
+    var vm = this;
 
     // TODO 先简单的判断
     vm.isAdmin = $state.current.name.indexOf('admin') > -1;
