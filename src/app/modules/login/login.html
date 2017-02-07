@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-lg-4 col-lg-offset-4">
+    <form class="form-default" style="margin: 20px; padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
+      <fieldset>
+        <legend>用户登陆</legend>
+        <div class="form-group">
+          <label>用户名</label>
+          <input type="text" class="form-control" ng-model="vm.user.username">
+        </div>
+        <div class="form-group">
+          <label>密码</label>
+            <input type="password" class="form-control" ng-model="vm.user.password">
+        </div>
+
+        <button class="btn btn-primary btn-block" ng-click="vm.login()">登录</button>
+      </fieldset>
+    </form>
+  </div>
+</div>

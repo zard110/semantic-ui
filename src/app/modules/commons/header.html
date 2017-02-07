@@ -1,0 +1,24 @@
+<div class="my-header" >
+  <img src="assets/images/logo.png" style="margin-left: 10px"/>
+  <img src="assets/images/icon_hbf.png" style="margin-left: 20px;"/>
+  <input type="text" placeholder="搜索..." class="search"/>
+  <span class="glyphicon glyphicon-search search-butt"></span>
+  <ul>
+    <li>
+      <a><i ng-show="vm.isAdmin" ng-click="vm.addProject()" class="glyphicon glyphicon-plus-sign" style="color: #fff; font-size: 20px; vertical-align: middle;"></i></a>
+    </li>
+    <li uib-dropdown on-toggle="toggled(open)" dropdown-append-to-body="true">
+        <a uib-dropdown-toggle>
+          <img src="assets/images/icon_sz.png"/>
+        </a>
+        <ul class="dropdown-menu header-setting" uib-dropdown-menu>
+          <li>
+            <a ng-click="vm.changeAdmin(true)" ng-show="!vm.isAdmin">领导管理页面</a>
+            <a  ng-click="vm.changeAdmin(false)" ng-show="vm.isAdmin">个人办公页面</a>
+          </li>
+        </ul>
+    </li>
+    <li><a href="#"><img src="assets/images/icon_tx1.png"/></a></li>
+    <li><a href="#"><img src="assets/images/icon_zx.png"/></a></li>
+  </ul>
+</div>

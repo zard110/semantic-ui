@@ -1,14 +1,108 @@
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+*{border: 0;margin: 0;padding: 0;font-size:14px;font-family: 微软雅黑;}
+input::-webkit-input-placeholder { /* WebKit browsers*/
+  　　color:#90A6C1;
 }
+input:-moz-placeholder {  /* Mozilla Firefox 4 to 18*/
+  　　color:#90A6C1;
+}
+input::-moz-placeholder {  /* Mozilla Firefox 19+*/
+  　　color:#90A6C1;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10+*/
+  　　color:#90A6C1;
+}
+.my-icons{border-radius:2px;font-size: 14px;width: 36px;height:20px;line-height: 18px;text-align: center;display: inline-block}
+.icon-db{border: 1px solid #2875ff ;color: #2875ff;}
+.icon-yc{border: 1px solid #ff0c4e ;color: #ff0c4e;}
+.icon-wc{border: 1px solid #4cb151 ;color: #4cb151;}
+.my-butt{display: inline-block;width: 80px;height: 40px;background: #448bff;border-radius: 4px;color: #fff;
+  line-height: 40px;text-align: center;text-decoration: none;}
+.my-butt2{display: inline-block;width: 80px;height: 40px;border:1px solid #ccc;border-radius: 4px;color: #448bff;
+  line-height: 40px;text-align: center;text-decoration: none;}
+.my-butt:hover{color: #fff;text-decoration: none;}
+.my-butt2:hover{color: #448bff;text-decoration: none;}
 
-.thumbnail {
-  height: 200px;
-}
+.my-header{background: #093a75;height: 80px;position: relative;line-height: 80px;}
+.search{width: 200px;height: 36px;border: 2px solid #275084;border-radius: 26px;background: none;outline: none;
+  color: #90A6C1;position: absolute;right: 180px;top: 20px;padding-left: 48px;}
+.search-butt{color: #275084;font-size: 20px;position: absolute;right: 345px;top: 28px;}
+.my-header ul{display: inline-block;position: absolute;right: 10px;}
+.my-header li{display: inline-block;padding: 0 10px;}
+.footer{background-color: #f7f8fc;height: 40px;line-height: 40px;text-align: center;border-top:1px solid #ccc;}
 
-.thumbnail img.pull-right {
-  width: 50px;
-}
+.leftside{width: 440px ;border-right:1px solid #ccc ; float: left}
+.rightside{margin-left: 440px;}
+
+.leftside>div{margin: 20px auto 0;width: 400px;}
+.maininfo{border:1px solid #ccc ;width: 400px;height: 160px;border-radius:4px; margin-top: 0;}
+.maininfo .log-out{display:inline-block;width: 70px;height: 30px;border:1px solid #ccc;border-radius:4px;
+  text-align: center;line-height: 28px;position: absolute;right: 20px;top: 13px;;}
+.maininfo ul{display: inline-block;list-style: none;margin-left:22px; }
+.maininfo li{display: inline-block;width:115px;text-align: center}
+.calen{border:1px solid #ccc ;width: 400px;height: 280px;border-radius:4px; }
+.tab-title{border-bottom: 1px solid #ccc;list-style: none;display: inline-block;width: 100%;margin-bottom: 0px}
+.tab-title li{display: inline-block;width: 80px;text-align: center;font-size: 16px;padding-bottom: 10px;cursor: pointer;}
+.tab-title .active{border-bottom: 3px solid #277afe;}
+.tab-body{list-style: none;}
+.tab-body li{position: relative}
+
+.wddb {font-size: 13px;color: #44668b;list-style: none;}
+.wddb li {border-bottom: 1px solid #ccc;padding:25px 10px 15px 0px;margin-left:10px;position: relative}
+.wddb li:before{content: url(../assets/images/icon_zttx.png);position: absolute;top:15px;}
+.wddb li div{width:86%;display: inline-block;margin-left: 50px;}
+.wddb li div img{position: absolute;top:25px;right:20px;}
+.wddb li div p{margin: 15px 0 0 0;line-height: 190%;}
+.mytable td{line-height: 50px;}
+.proj-info{padding: 0px 20px;margin-top: 10px}
+.xmtjfx ,.xmlxtjfx{border:1px solid #ccc ;height: 260px;border-radius:4px; }
+
+
+.proj-mag{height: 150px;background-color:#e4eaf6;border-bottom: 1px solid #ccc;position: relative; }
+.proj-mag ul{display: inline-block;list-style: none;position: absolute;bottom: 5px;left: 100px;}
+.proj-mag ul li{display: inline-block; width: 300px;}
+
+.xmgzrwgl{height: 40px;line-height: 40px;border-bottom: 1px solid #ccc;}
+
+.all-proj{height:580px;overflow-y:auto ;border-top:1px solid #ccc;border-right:1px solid #ccc;}
+.proj-list{list-style: none; }
+.proj-list li{border-bottom:1px solid #ccc;}
+.proj-list li:hover{background-color:#f3f4f8; }
+.proj-list li.active{background-color:#f3f4f8; }
+.proj-list .proj-main{padding: 28px 5px 25px 20px;line-height: 200%;}
+
+.file-upload{position: absolute;top: 25px;left: 130px;width: 400px;height: 38px;border: 1px solid #ccc;border-radius: 4px;padding-left: 5px;}
+.file-upload-butt{opacity: 0;}
+.upload-butt{position: absolute;left: 540px;top: 24px;}
+
+.all-file{display: inline-block;list-style: none;}
+.all-file li{display: inline-block;width: 200px;height: 80px;border:1px solid #ccc;
+  border-radius: 4px;background-color: #f7f8fc;margin: 20px 0 0 20px;position: relative;}
+.all-file .img-cell{display: table-cell;line-height: 80px;padding-left: 20px;}
+.all-file .file-name{display: table-cell; vertical-align: middle; width: 130px;padding-left:5px;}
+.down{position: absolute;top: 0;left: 0;border-radius:4px;width: 200px;height: 80px;
+  background: url("../assets/images/proj/icon_xzx.png") center center no-repeat;}
+.gzjl{border: 1px solid #ccc; border-radius: 4px; width: 80%; margin: 20px 0 20px;resize: none;padding: 10px}
+.new-gzjl{width: 25px;height: 15px;background:url(../assets/images/proj/icon_xz.png) center right no-repeat #fff;position: absolute;top:-8px;right: 0;}
+.attention{height: 188px; border:1px solid #ccc;border-radius: 4px;background: #edf2f8;position: relative}
+.peo{margin-top: 20px;}
+.time{margin-top: 10px;}
+.task-trace{height: 200px;margin-top: 10px;border:1px solid #ccc;border-radius: 4px;background: #edf2f8;}
+.progress{display: inline-block;margin:8px 10px 0 0;}
+.ygsj{width: 70%;height: 10px;border: 1px solid #448bff;}
+.syqx{width: 70%;height: 10px;border: 1px solid #ff1846;}
+.rwwcd{width: 70%;height: 10px;border: 1px solid #ff9100;}
+.ygsj-bar{ background: #448bff;}
+.syqx-bar{background: #ff1846;}
+.rwwcd-bar{background:#ff9100;}
+
+.pinfo{width: 100%;margin: 15px;}
+.lefttd{text-align: right;padding-right:10px; }
+
+
+.my-dialog{display: none}
+.dialog-shadow{ position: fixed;top:0;left:0;width: 100%;height: 100%;background: black;opacity: 0.5;z-index: 1000;}
+.dialog-content{border: 1px solid #ccc;border-radius: 4px;
+  position: fixed;top:50%;left:50%;z-index:10000;background:#fff;width: 920px;margin-top: -345px;margin-left: -460px;}
+.my-input{display: inline-block;    width: 40%;}
+.worklog{width: 100%}
+.worklog td{padding: 10px 20px;}
