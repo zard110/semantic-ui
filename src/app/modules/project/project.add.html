@@ -1,1 +1,57 @@
-123123
+<div style="height: 90px;border-bottom:1px solid #ccc;line-height: 90px;">
+  <img src="images/proj/icon_xjgzrz.png" style="margin-left: 20px;">
+  <img src="images/proj/icon_gb.png" style="position: absolute;top: 35px;right: 20px;" onclick="closeDialog()">
+</div>
+<div style="height: 530px;">
+  <form id="myform" role="form" style="padding: 20px;">
+    <input type="reset" style="display:none;">
+    <table class="worklog" style="width: 100%;">
+      <tbody>
+      <tr>
+        <td style="width: 50%">
+          <div class="form-group ">
+            <label>工作时间</label>
+            <input type="text" class="form-control">
+
+          </div>
+        </td>
+        <td style="width: 50%">
+          <div class="form-group ">
+            <label>任务完成度</label>
+            <input type="text" class="form-control">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="form-group ">
+            <label>是否影响项目进度</label>
+            <input type="text" class="form-control">
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div class="form-group">
+            <label>遇到问题描述</label>
+            <textarea class="form-control"></textarea>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div class="form-group">
+            <label>工作描述</label>
+            <textarea class="form-control"></textarea>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </form>
+</div>
+<div style="height: 70px;background: #f5f6fa;border-top:1px solid #ccc;line-height: 70px;text-align: right">
+  <a href="#" class="my-butt2" onclick="closeDialog()" style="margin-right: 20px;color: black">取消</a>
+  <a href="#" class="my-butt" style="margin-right: 20px">提交</a>
+</div>

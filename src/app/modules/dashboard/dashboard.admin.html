@@ -1,127 +1,123 @@
-<div class="row">
-  <div class="col-md-12">
-    <div class="leftside">
-      <div class="maininfo" >
-        <div style="margin: 20px 0 30px 20px;position: relative">
-          <img src="assets/images/icon_tx.png"/>
-          <span style="margin-left: 15px;font-size:18px ">{{vm.info.name}}</span><span style="font-size: 13px;">（{{vm.info.dept}}）</span>
-          <button class="btn btn-default log-out" ui-sref="root.login">退出登录</button>
-        </div>
-        <ul>
-          <li>
-            <span style="font-size: 19px;">{{vm.info.wddb}}</span></br>
-            <span>我的待办</span>
-          </li>
-          <li style="border-left:1px solid #ccc;border-right:1px solid #ccc; ">
-            <span style="font-size: 19px;color: #f7443d;">{{vm.info.gzxm}}</span></br>
-            <span>我关注的项目</span>
-          </li>
-          <li>
-            <span style="font-size: 19px;color:#4c8afb">{{vm.info.dbrw}}</span></br>
-            <span>我督办的任务</span>
-          </li>
-        </ul>
-
+<div class="flex-row flex-item no-wrap" style="padding: 20px 0;">
+  <div class="leftside flex-column no-shrink">
+    <div class="maininfo flex-row">
+      <div class="flex-row flex-item flex-center">
+        <img src="assets/images/icon_tx.png"/>
+        <span class="flex-item" style="height: 24px; padding: 0 20px;">
+          <span style="font-size:18px ">{{vm.info.name}}</span>
+          <span style="font-size: 13px;">（{{vm.info.dept}}）</span>
+        </span>
+        <button class="btn btn-default log-out" ui-sref="root.login">退出登录</button>
       </div>
-      <div class="calen"></div>
-      <div class="about-info">
-        <div class="mytab">
-          <ul class="tab-title">
-            <li class="active">和我相关</li>
-          </ul>
-          <ul class="tab-body">
-            <li>
-              <ul class="wddb">
-                <li ng-repeat="obj in vm.news">
-                  <div>
-                    <span style="color: #488bfe;">{{obj.name}}</span>
-                    <span style="margin-left: 10px;">有新的动态-{{obj.date}}</span>
-                    <img src="assets/images/icon_hf.png"/></br>
-                    <p>{{obj.info}}
-                    </p>
-                  </div>
-                </li>
-              </ul>
+      <ul class="flex-item">
+        <li>
+          <span style="font-size: 19px;">{{vm.info.wddb}}</span></br>
+          <span>我的待办</span>
+        </li>
+        <li style="border-left:1px solid #ccc;border-right:1px solid #ccc; ">
+          <span style="font-size: 19px;color: #f7443d;">{{vm.info.gzxm}}</span></br>
+          <span>我关注的项目</span>
+        </li>
+        <li>
+          <span style="font-size: 19px;color:#4c8afb">{{vm.info.dbrw}}</span></br>
+          <span>我督办的任务</span>
+        </li>
+      </ul>
+    </div>
+    <div class="calen" uib-datepicker ng-model="vm.today"></div>
+    <div class="about-info flex-item no-shrink">
+
+      <uib-tabset>
+        <uib-tab index="0" heading="和我相关">
+          <ul class="wddb">
+            <li ng-repeat="obj in vm.news">
+              <div>
+                <span style="color: #488bfe;">{{obj.name}}</span>
+                <span style="margin-left: 10px;">有新的动态-{{obj.date}}</span>
+                <img src="assets/images/icon_hf.png"/></br>
+                <p>{{obj.info}}
+                </p>
+              </div>
             </li>
           </ul>
+        </uib-tab>
+      </uib-tabset>
+    </div>
+  </div>
+
+  <div class="rightside flex-item flex-column proj-info">
+    <div class="row">
+      <div class="col-md-12 flex-row flex-center" style="margin-bottom: 5px;">
+        <div class="btn-group">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                  style="border: none;font-size: 23px;">
+            我关注的项目<img src="assets/images/icon_xl.png"/>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">所有项目</a></li>
+          </ul>
+        </div>
+        <nav class="flex-item">
+          <ul class="pagination" style="margin:0px 0px -8px;">
+            <li class="disabled"><a href="#">&laquo;</a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li class="disabled"><a href="#">&raquo;</a></li>
+          </ul>
+        </nav>
+        <div>
+          <span style="font-size: 13px">截至10:40</span>
+          <img src="assets/images/icon_sx.png" style="margin-left: 10px;"/>
+          <img src="assets/images/icon_sxs.png" style="margin-left: 10px;"/>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <table class="table">
+            <thead>
+            <tr style="height: 50px;">
+              <th>项目名称</th>
+              <th>需处理事项</th>
+              <th>开始时间</th>
+              <th>剩余时限</th>
+              <th>项目状态</th>
+              <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="project in vm.projects">
+              <td>
+                <a ui-sref="root.project({projectId: project.id})">{{project.name}}</a>
+                <div class="my-icons icon-db">督办</div>
+              </td>
+              <td>{{project.xclsx}}</td>
+              <td>{{project.beginDate}}</td>
+              <td>{{project.sysx}}</td>
+              <td>{{project.xmzt}}</td>
+              <td>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    已督办<span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">督办</a></li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
-    <div class="rightside">
-      <div class="container-fluid proj-info">
-        <div class="row">
-          <div class="col-md-12" style="position: relative;">
-            <div class="btn-group" style="margin:0px 10px 10px 0;">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-                      style="border: none;font-size: 23px;">
-                我关注的项目<img src="assets/images/icon_xl.png"/>
-              </button>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">所有项目</a></li>
-              </ul>
-            </div>
-            <div style="display: inline-block">
-              <nav>
-                <ul class="pagination" style="margin:0px 0px -8px;">
-                  <li class="disabled"><a href="#">&laquo;</a></li>
-                  <li class="active"><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li class="disabled"><a href="#">&raquo;</a></li>
-                </ul>
-              </nav>
-            </div>
-            <div style="position: absolute; top: 0;right: 17px;">
-              <span style="font-size: 13px">截至10:40</span>
-              <img src="assets/images/icon_sx.png" style="margin-left: 10px;"/>
-              <img src="assets/images/icon_sxs.png" style="margin-left: 10px;"/>
-            </div>
-
-          </div>
-          <div class="col-md-12">
-            <div class="panel panel-default">
-              <table class=" table mytable">
-                <thead >
-                <tr style="height: 50px;">
-                  <th>项目名称</th>
-                  <th>需处理事项</th>
-                  <th>开始时间</th>
-                  <th>剩余时限</th>
-                  <th>项目状态</th>
-                  <th>操作</th></tr>
-                </thead>
-                <tbody>
-                <tr ng-repeat="project in vm.projects">
-                  <td>
-                    <a ui-sref="root.project({projectId: project.id})">{{project.name}}</a>
-                    <div class="my-icons icon-db">督办</div>
-                  </td>
-                  <td>{{project.xclsx}}</td>
-                  <td>{{project.beginDate}}</td>
-                  <td>{{project.sysx}}</td>
-                  <td>{{project.xmzt}}</td>
-                  <td>
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                        已督办<span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">督办</a></li>
-                      </ul>
-                    </div>
-                  </td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="xmtjfx"></div>
-          </div>
-          <div class="col-md-6">
-            <div class="xmtjfx"></div>
-          </div>
-        </div>
+    <div class="row flex-item flex-row">
+      <div class="col-md-6">
+        <div class="xmtjfx"></div>
+      </div>
+      <div class="col-md-6">
+        <div class="xmtjfx"></div>
       </div>
     </div>
   </div>

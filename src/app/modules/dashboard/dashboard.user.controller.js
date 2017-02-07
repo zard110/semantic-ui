@@ -9,6 +9,8 @@
   function DashboardController() {
     let vm = this;
 
+    vm.today = new Date();
+
     vm.projects = [
       {id: 1, name: '草桥清真寺地库', xclsx: '管综方案审定', beginDate: '2017-01-06', sysx: '-3', xmzt: '延迟'},
       {id: 2, name: '草桥清真寺地库', xclsx: '管综方案审定', beginDate: '2017-01-06', sysx: '-3', xmzt: '延迟'},

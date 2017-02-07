@@ -23,6 +23,7 @@
         templateUrl: 'app/modules/project/project.add.html',
         controller: 'ProjectAddController',
         controllerAs: 'vm',
+        size: 'lg'
       });
 
       // 新增项目后跳到项目管理页面
